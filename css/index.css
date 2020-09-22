@@ -270,3 +270,82 @@
 .col_219 {
     width: 219px;
 }
+
+
+/* 侧边栏 */
+.toolbar-wrap {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: 630px;
+    z-index: 9990;
+    width: 35px;
+    height: 100%;
+}
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 29px;
+    height: 100%;
+    /* border-right: 6px solid #7A6E6E; */
+}
+
+
+.toolbar a {
+    display: block;
+}
+
+.toolbar a:hover {
+    background-color: #c81623;
+    color: #fff;
+}
+
+.toolbar-tabs {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -61px;
+    width: 50px;
+}
+
+.toolbar-tab {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1px;
+    width: 50px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 3px 0 0 3px;
+    background-color: #7A6E6E;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.toolbar-tab i {
+    font-size: 25px;
+}
+
+
+
+.toolbar-footer {
+    position: absolute;
+    bottom: -1px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #666;
+}
+
+.tbar-tab-top,
+.tbar-tab-feedback {
+    height: 55px;
+    line-height: 20px;
+    padding-top: 10px;
+    width: 50px;
+    text-align: center;
+    font-size: 14px;
+}

@@ -274,13 +274,13 @@
 
 /* 侧边栏 */
 .toolbar-wrap {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 500px;
     left: 50%;
     margin-left: 630px;
     z-index: 9990;
     width: 35px;
-    height: 100%;
+    height: 400px;
 }
 
 .toolbar {
@@ -338,6 +338,10 @@
     padding: 0;
     width: 100%;
     color: #666;
+}
+
+.tbar-tab-top {
+    display: none;
 }
 
 .tbar-tab-top,

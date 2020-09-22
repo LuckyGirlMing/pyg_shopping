@@ -130,6 +130,52 @@ window.addEventListener('load',function() {
 
 
     //侧边栏固定滑动js模块
+    //获取元素
+    var toolbar = document.querySelector('.toolbar-wrap');
+    var main = document.querySelector('.main');
+    var mainTop = main.offsetTop;
+    var toolbarTop = toolbar.offsetTop-mainTop;
+    var goBack = toolbar.querySelector('.tbar-tab-top');
+    //页面滚动事件
+    document.addEventListener('scroll',function() {
+        // console.log(window.pageYOffset);
+        if(window.pageYOffset >= mainTop) {
+            toolbar.style.position = 'fixed';
+            toolbar.style.top = toolbarTop +'px';
+            goBack.style.display = 'block';
+        }else {
+            toolbar.style.position = 'absolute';
+            toolbar.style.top = '500px';
+            goBack.style.display = 'none';
+        }
+    })
 
+    //点击返回顶部模块
+    goBack.addEventListener('click',function() {
+        animateY(window,0)
+    })
 
+    function animateY(obj,target,callback) {
+        var yOffset = window.pageYOffset;
+        //清除对象之前的定时器
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            //将步长值写到定时器中
+            var step = (target-window.pageYOffset)/10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            // var step = 1;
+    
+            if(window.pageYOffset == target) {
+                //停止动画，本质是停止定时器
+                clearInterval(obj.timer);
+                //回调函数写道定时器里面里面
+                // if(callback) {
+                //     //调用回调函数
+                //     callback();
+                // }
+                callback && callback();
+            }
+            window.scroll(0,window.pageYOffset+step);
+        },15);
+    }
 })
